@@ -14,13 +14,13 @@ module.exports = async (fastify) => {
 
   // Get a single PriceList entry by Article No.
   fastify.get(
-    "/pricelist/:articleNo",
+    "/pricelist/:id",
     priceListController.getPriceListByArticleNo
   );
 
   // Update a PriceList entry by Article No.
-  fastify.put("/pricelist/:articleNo", priceListController.updatePriceList);
+  fastify.put("/pricelist/:id", priceListController.updatePriceList);
 
   // Delete a PriceList entry by Article No.
-  fastify.delete("/pricelist/:articleNo", priceListController.deletePriceList);
+  fastify.delete("/pricelist/:id", priceListController.deletePriceList);
 };

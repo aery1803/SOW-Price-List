@@ -31,28 +31,28 @@ module.exports = (sequelize) => {
      */
     inPrice: {
       type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: true,
     },
     /**
      * The Price field represents the selling price of the product or service.
      */
     price: {
       type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: true,
     },
     /**
      * The Unit field represents the unit of measurement for the product or service.
      */
     unit: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     /**
      * The In Stock field represents the quantity of the product available in stock.
      */
     inStock: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     /**
      * The Description field provides additional details about the product or service.

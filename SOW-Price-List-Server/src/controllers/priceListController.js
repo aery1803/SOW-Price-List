@@ -31,13 +31,13 @@ module.exports = {
     }
   },
 
-  // Get a single PriceList entry by Article No.
+  // Get a single PriceList entry by Id.
   async getPriceListByArticleNo(request, reply) {
     const { PriceList } = request.server.models;
 
     try {
-      const { articleNo } = request.params;
-      const priceList = await PriceList.findOne({ where: { articleNo } });
+      const { id } = request.params;
+      const priceList = await PriceList.findOne({ where: { id } });
       if (!priceList) {
         reply.code(404).send({ error: "PriceList entry not found" });
       } else {
@@ -51,18 +51,18 @@ module.exports = {
     }
   },
 
-  // Update a PriceList entry by Article No.
+  // Update a PriceList entry by Id.
   async updatePriceList(request, reply) {
     const { PriceList } = request.server.models;
 
     try {
-      const { articleNo } = request.params;
+      const { id } = request.params;
       const [updated] = await PriceList.update(request.body, {
-        where: { articleNo },
+        where: { id },
       });
       if (updated) {
         const updatedPriceList = await PriceList.findOne({
-          where: { articleNo },
+          where: { id },
         });
         reply.code(200).send(updatedPriceList);
       } else {
@@ -76,13 +76,13 @@ module.exports = {
     }
   },
 
-  // Delete a PriceList entry by Article No.
+  // Delete a PriceList entry by Id.
   async deletePriceList(request, reply) {
     const { PriceList } = request.server.models;
 
     try {
-      const { articleNo } = request.params;
-      const deleted = await PriceList.destroy({ where: { articleNo } });
+      const { id } = request.params;
+      const deleted = await PriceList.destroy({ where: { id } });
       if (deleted) {
         reply
           .code(200)

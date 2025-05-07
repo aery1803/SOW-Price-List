@@ -7,7 +7,7 @@ import React from "react";
  *
  * @param {string} className - Optional CSS class to style the loader container.
  */
-const Loader = ({ className }) => {
+const Loading = ({ className }) => {
   return (
     <div className={className}>
       <div className="loader-square" id="sq1" />
@@ -23,4 +23,4 @@ const Loader = ({ className }) => {
   );
 };
 
-export default Loader;
+export default Loading;
