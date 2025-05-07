@@ -20,8 +20,13 @@
     height: rem(80);
 
     .menu-icon {
+      display: none;
       width: rem(32);
       height: rem(32);
+
+      @media (width < 1200px) {
+        display: flex;
+      }
     }
 
     .user-info {
