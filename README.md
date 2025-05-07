@@ -1,22 +1,22 @@
-# SOW Client (Vite + React)
+# SOW Price List Client (Vite + React)
 
-This project is a client-side application built with React. It provides a user-friendly interface for interacting with the backend API to display terms and conditions in multiple languages.
+This project is a client-side application built with React. It provides a user-friendly interface for interacting with the backend API to display price lists.
 
 ## Project Structure
 
 ```
-SOW-Terms-Client
+SOW-Price List-Client
 ├── public
-│   ├── logo.png            # Application logo
-│   ├── background.jpg      # Background image
+│   ├── avatar.png          # Avatar logo
 ├── src
 │   ├── index.jsx           # Application entry point
 │   ├── App.jsx             # Main application component
 │   ├── components
-│   │   ├── Header.jsx      # Header component with navigation and language selection
-│   │   ├── MainContent.jsx # Main content component for displaying terms
-│   │   ├── MenuDropdown.jsx # Dropdown menu for navigation links
-│   │   ├── LanguageDropdown.jsx # Dropdown for language selection
+│   │   ├── Header.jsx      # Header component with navigation and user info
+│   │   ├── MainContent.jsx # Main content component for displaying price lists
+│   │   ├── Menu.jsx        # Dropdown menu for navigation links
+│   │   ├── NewPricList.jsx # To add new price list
+│   │   ├── Table.jsx       # Table to show the price list
 │   │   ├── Loading.jsx     # Loader component for loading states
 │   ├── utils
 │   │   └── api.js          # Utility for API calls
@@ -34,7 +34,7 @@ SOW-Terms-Client
 
 ```
 git clone <repository-url>
-cd SOW-Terms-Client
+cd SOW-Price-List-Client
 ```
 
 2. Install dependencies:
@@ -61,19 +61,12 @@ npm run dev
 
 2. Open the application in your browser at http://localhost:5173 (default Vite development server URL).
 
-## Features
-
-- **Language Selection**: Users can switch between multiple languages to view terms and conditions.
-- **Dynamic Content**: Fetches terms and conditions dynamically from the backend API.
-- **Responsive Design**: Optimized for both desktop and mobile devices.
-- **Dropdown Navigation**: Includes a dropdown menu for easy navigation.
-
 ## Components
 
 - **Header**: Displays the application logo, navigation menu, and language selection dropdown.
-- **MainContent**: Renders the terms and conditions dynamically based on the selected language.
-- **MenuDropdown**: Provides a dropdown menu for navigation links.
-- **LanguageDropdown**: Allows users to select their preferred language.
+- **MainContent**: Renders the Price List.
+- **Menu**: Provides a dropdown menu for navigation links.
+- **Table**: Renders the Price List in tabular form.
 - **Loader**: Displays a loading animation while fetching data.
 
 ## Contributing
@@ -84,9 +77,7 @@ Feel free to submit issues or pull requests for improvements or bug fixes.
 
 This project is licensed under the MIT License.
 
----
-
-# SOW Server (Fastify, Node, Sequelize + PostgreSQL)
+# SOW-Price-List-Server (Fastify, Node, Sequelize + PostgreSQL)
 
 This project is a backend application built with Fastify and Sequelize. It provides a RESTful API and integrates with a relational database using Sequelize ORM.
 
@@ -100,11 +91,11 @@ SOW-Terms-Server
 │   │   └── sequelize.js     # Fastify plugin for Sequelize integration
 │   ├── routes
 │   │   ├── index.js         # Consolidated route definitions
-│   │   ├── contentRoute.js  # Routes for content-related operations
+│   │   ├── PricListRoute.js # Routes for price-list-related operations
 │   ├── models
-│   │   └── content.js       # Sequelize model for content
+│   │   └── priceList.js       # Sequelize model for price-list
 │   ├── controllers
-│   │   ├── contentController.js # Business logic for content routes
+│   │   ├── priceListController.js # Business logic for price-list routes
 ├── .env                      # Environment variables
 ├── .sequelizerc              # Sequelize CLI configuration
 ├── package.json              # Project dependencies and scripts
@@ -117,7 +108,7 @@ SOW-Terms-Server
 
    ```
    git clone <repository-url>
-   cd SOW-Terms-Server
+   cd SOW-Price-List-Server
    ```
 
 2. Install dependencies:
@@ -149,12 +140,11 @@ SOW-Terms-Server
 
 ## API Endpoints
 
-- **Content Routes**: Defined in `src/routes/contentRoute.js` and implemented in `src/controllers/contentController.js`.
-  - `GET /content/:language`: Fetch content by language.
+- **Price List Routes**: Defined in `src/routes/priceListRoute.js` and implemented in `src/controllers/priceListController.js`.
 
 ## Sequelize Models
 
-- **Content Model**: Defined in `src/models/content.js`. Represents the `content` table in the database, storing terms and their associated language information.
+- **Price List Model**: Defined in `src/models/priceList.js`. Represents the `PriceList` table in the database, storing prices of various product and services.
 
 ## Contributing
 

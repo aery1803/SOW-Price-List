@@ -1,4 +1,4 @@
-# Fastify Sequelize Backend
+# SOW-Price-List-Server (Fastify, Node, Sequelize + PostgreSQL)
 
 This project is a backend application built with Fastify and Sequelize. It provides a RESTful API and integrates with a relational database using Sequelize ORM.
 
@@ -12,11 +12,11 @@ SOW-Terms-Server
 │   │   └── sequelize.js     # Fastify plugin for Sequelize integration
 │   ├── routes
 │   │   ├── index.js         # Consolidated route definitions
-│   │   ├── contentRoute.js  # Routes for content-related operations
+│   │   ├── PricListRoute.js # Routes for price-list-related operations
 │   ├── models
-│   │   └── content.js       # Sequelize model for content
+│   │   └── priceList.js       # Sequelize model for price-list
 │   ├── controllers
-│   │   ├── contentController.js # Business logic for content routes
+│   │   ├── priceListController.js # Business logic for price-list routes
 ├── .env                      # Environment variables
 ├── .sequelizerc              # Sequelize CLI configuration
 ├── package.json              # Project dependencies and scripts
@@ -29,7 +29,7 @@ SOW-Terms-Server
 
    ```
    git clone <repository-url>
-   cd SOW-Terms-Server
+   cd SOW-Price-List-Server
    ```
 
 2. Install dependencies:
@@ -61,12 +61,11 @@ SOW-Terms-Server
 
 ## API Endpoints
 
-- **Content Routes**: Defined in `src/routes/contentRoute.js` and implemented in `src/controllers/contentController.js`.
-  - `GET /content/:language`: Fetch content by language.
+- **Price List Routes**: Defined in `src/routes/priceListRoute.js` and implemented in `src/controllers/priceListController.js`.
 
 ## Sequelize Models
 
-- **Content Model**: Defined in `src/models/content.js`. Represents the `content` table in the database, storing terms and their associated language information.
+- **Price List Model**: Defined in `src/models/priceList.js`. Represents the `PriceList` table in the database, storing prices of various product and services.
 
 ## Contributing
 

@@ -64,7 +64,7 @@ module.exports = fp(async (fastify) => {
   // Establish the database connection
   await connectToDatabase();
 
-  // Load and initialize the Content model
+  // Load and initialize the Price List model
   const PriceList = require("../models/priceList")(sequelize);
 
   // Synchronize the database schema with the models
